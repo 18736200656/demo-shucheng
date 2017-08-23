@@ -1,7 +1,7 @@
 <template>
   <div class="loading">
     <svg class="spinner" :style="loadingSize" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-      <cirle class="path" :style="loadingColor" fill="none" :stroke-width="stroke" stroke-linecap="round" cx="33" cy="33" r="30"></cirle
+      <cirle class="path" :style="loadingColor" fill="none" :stroke-width="stroke" stroke-linecap="round" cx="33" cy="33" r="30"></cirle>
     </svg>
   </div>
 </template>

@@ -8,9 +8,9 @@
               <i class="back"></i>
               <h2 class="detail-title">{{bookDetail.name}}</h2>
             </a>
-            <route-link to="/" class="home-btn">
+            <router-link to="/" class="home-btn">
               <i class="iconfont icon-home"></i>
-            </route-link>
+            </router-link>
           </header>
           <div class="detail-con" v-if="!loading">
             <div class="detail-img">
@@ -18,8 +18,8 @@
             </div>
             <div class="detail-mian">
               <h3 class="name">{{bookDetail.name}}</h3>
-              <p class="author">{{bookDetail.author}}</p>
-              <p class="type">{{bookDetail.type}}</p>
+              <p class="author">作者：{{bookDetail.author}}</p>
+              <p class="type">分类：{{bookDetail.type}}</p>
               <p class="word-count">{{bookDetail.wordcount}}万字</p>
               <rate :score="bookDetail.ratings"></rate>
             </div>
@@ -65,8 +65,8 @@
     import {mapState} from 'vuex'
     import axios from 'axios'
     import Similar from './similar.vue'
-    import defaultImage from '@assets/js/utils.js'
-    import Rate from '@/components/rate/rate'
+    import defaultImage from '@/assets/js/utils.js'
+    import Rate from './rate/rate'
     import Loading from './loading/loading'
     export default {
       data () {
@@ -85,6 +85,7 @@
         getBookDetail (bookId) {
           this.loading = true
           axios.get(`${this.common.api}/booklist?id=${bookId}`).then(res=>{
+            console.log(this)
             this.loading = false //获取数据完成后隐藏loading
             this.showmore = false //获取数据让简介最多显示5行
             this.bookDetail = res.data
@@ -103,15 +104,15 @@
           this.common.defaultImage(e)
         }
       },
-      computed:{
+      computed: {
         ...mapState([
           'curBookDetailId'
         ])
       },
-      components:{Similar,Rate,Loading},
-      watch:{
+      components: {Similar, Rate, Loading},
+      watch: {
         //监听路由，点击底部喜欢的书籍路由会改变，重新获取数据
-        $route(to,from){
+        $route (to, from) {
           this.getBookDetail(to.params.id)
         }
       }
@@ -223,7 +224,7 @@
           }
         }
       }
-      &:nth-chid(2){
+      &:nth-child(2){
         button{
           color: #333;
           background: #fff;

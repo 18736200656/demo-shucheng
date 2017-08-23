@@ -37,7 +37,7 @@
       props:['datalist','title'],
       methods:{
         bookDetailID(id){
-          this.$store.dispatch('chooseBook,id')
+          this.$store.dispatch('chooseBook',id)
           console.log(id)
         }
       },

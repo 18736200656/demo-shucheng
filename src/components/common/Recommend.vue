@@ -16,6 +16,7 @@
 </template>
 
 <script>
+    import defaultImage from '../../assets/js/utils'
     export default {
       name: 'Recommend',
       data () {

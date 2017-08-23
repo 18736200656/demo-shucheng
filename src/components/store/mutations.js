@@ -42,6 +42,9 @@ export default{
       return false
     }
     state.cur_chapter ++
+  },
+  [types.CHOOSE_BOOK](state,id){
+    state.curBookDetailId = id
   }
 
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
-import Reader from'@components/reader'
+import Reader from '@/components/reader'
 Vue.use(Router)
 
 export default new Router({
@@ -19,7 +19,13 @@ export default new Router({
     {
       path:'/boolDetail/:id',
       name:'bookDetail',
-      commpoents:resolve =>require(['@components/bookDetail'],resolve)
+      commpoents:resolve =>require(['@/components/bookDetail'],resolve)
+    },
+    {
+      path:'/category',
+      name:'category',
+      components:resolve =>require(['@/components/category'],resolve)
+
     }
   ]
 })

@@ -7,12 +7,17 @@ Vue.use(Vuex)
 
 const state = {
   bar: false,
-  cur_chapter :1,
-  font_size:18,
-  bg_night:false,
   font_panel:false,
+  font_icon:false,
   list_panel:false,
-  curBookDetailID: 1
+  font_size:18,
+  bg_color:1,
+  bg_night:false,
+  cur_chapter :1,
+  windowHeight:'',
+  curBookDetailID: 1,
+  curBookContentId:1
+
 }
 export default new Vuex.Store({
   state,

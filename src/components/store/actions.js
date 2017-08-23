@@ -30,6 +30,9 @@ export default {
   },
   nextChapter({commit, maxChaper}) {
     commit(types.NEXT_CHAPTER, maxChaper)
+  },
+  chooseBook({commit},id){
+    commit(types.CHOOSE_BOOK,id)
   }
 
 }

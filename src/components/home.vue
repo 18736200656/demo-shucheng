@@ -45,7 +45,7 @@
   import Loading from './loading/loading.vue'
 
   export default {
-    data() {
+    data () {
       return {
         booklist: [],
         type: [
@@ -73,11 +73,11 @@
         loading: false
       }
     },
-    created() {
+    created () {
       this.getData()
     },
     methods: {
-      getData() {
+      getData () {
         this.loading = true
         axios.get(`${this.common.api}/booklist`).then(res => {
           this.loading = false   //获取数据完成后隐藏loading
@@ -91,13 +91,13 @@
       Loading
     },
     filters: {
-      hot(value) {
+      hot (value) {
         if (!value) return ''
         var arr = []
         value.forEach((item, index) => {
           //简单更改下首页加载数据太多,可自行修改
           if (index < 20) {
-            if (index % 2 == 1) {
+            if (index % 2 === 1) {
               arr.push(item)
             }
           }
@@ -110,7 +110,7 @@
         value.forEach((item, index) => {
           //简单更改下首页加载数据太多,可自行修改
           if (index < 20) {
-            if (index % 2 == 0) {
+            if (index % 2 === 0) {
               arr.push(item)
             }
           }
@@ -123,7 +123,7 @@
         value.forEach((item, index) => {
           //简单更改下首页加载数据太多,可自行修改
           if (index < 20) {
-            if (index % 3 == 2) {
+            if (index % 3 === 2) {
               arr.push(item)
             }
           }
@@ -134,7 +134,7 @@
         if (!value) return ''
         var arr = []
         value.forEach((item, index) => {
-          if (index % 3 == 1) {
+          if (index % 3 === 1) {
             arr.push(item)
           }
         })
@@ -154,7 +154,7 @@
         if (!value) return ''
         var arr = []
         value.forEach((item, index) => {
-          if (index % 4 == 2) {
+          if (index % 4 === 2) {
             arr.push(item)
           }
         })

@@ -11,22 +11,21 @@
       },
       props:['score'],
       computed:{
-        itemClasses(){
-          let result = [];
-          let score = Math.floor(this.score *2) /2
-          let hasDecimal = score % 2==1
-          let iteger = Math.floor(score){
-            for(var i =0; i < integer;i++){
-              result.push('on')
-            }
-            if(hasDecimal){
-              result.push('half')
-            }
-            while(result.length <5){
-              result.push('off')
-            }
-            return result
+        itemClasses() {
+          let result = []
+          let score = Math.floor(this.score * 2) / 2
+          let hasDecimal = score % 2 === 1
+          let integer = Math.floor(score)
+          for (var i = 0; i < integer; i++) {
+            result.push('on')
           }
+          if (hasDecimal) {
+            result.push('half')
+          }
+          while (result.length < 5) {
+            result.push('off')
+          }
+          return result
         }
       }
     }

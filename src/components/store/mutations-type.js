@@ -18,3 +18,5 @@ export const TOGGLE_BAR = 'TOGGLE_BAR'
 export const PREV_CHAPTER = 'PREV_CHAPTER'
 //向下翻页
 export const NEXT_CHAPTER = 'NEXT_CHAPTER'
+//选择书籍
+export const CHOOSE_BOOK = 'CHOOSE_BOOK'

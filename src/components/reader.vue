@@ -30,13 +30,13 @@
   import Vue from 'vue'
   import {mapState} from 'vuex'
   import axios from 'axios'
-  import localEvent from '../store/local'
+  import localEvent from './store/local'
   import TopNav from './topNav/topNav'
   import BottomNav from './BottomNav/BottomNav.vue'
   import FontNav from './FontNav/FontNav'
   import ListPanel from './ListPanel/ListPanel.vue'
   import Cover from './Cover,vue'
-  import Loading from './loading/loading..vue'
+  import Loading from './loading/loading.vue'
 
     export default {
       name: 'reader',
@@ -45,7 +45,8 @@
           bar:false,
           timer:null,
           title:'',
-          content:false,
+          content:[],
+          loading:false,
           showList:false,
           booksReadInfo:{}
         }
@@ -58,10 +59,10 @@
         Cover,
         Loading
       },
-      created:{
+      created () {
 //        判断本地是否存储阅读器文字的大小
-        if(localEvent.StorageGetter('fz_size')){
-          this.$store.state.font_size = localEvent.StorageGetter('fz_size')
+        if (localEvent.StorageGetter('fz_size')) {
+          this.$store.state.fz_size = localEvent.StorageGetter('fz_size')
         }
 //        判断本地是存储了于阅读器的主题色
         if(localEvent.StorageGetter('bg_color')){
@@ -106,7 +107,7 @@
         pageUp(){
           let target = document.body.scrollTop - window.screen.height - 80
           this.startScroll(target,-20)
-        }
+        },
 //        向下翻页
         pageDown(){
           let target = document.body.scrollTop +window.screen.height -80
